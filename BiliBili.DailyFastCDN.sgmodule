@@ -1,7 +1,7 @@
 #!name=📺 BiliBili: 每日最快 CDN
 #!desc=当天首次 JSON PlayURL 时，实测官方下发的播放源并优先最快项；不是 App 启动事件。
 #!category=📺 BiliBili
-#!arguments=SCRIPTURL=https://example.invalid/bilibili-daily-fast-cdn.js&SAMPLEBYTES=524288&HTTPTIMEOUT=4&MAXCANDIDATES=4&POLICY=__PROFILE_RULES__&NOTIFY=false
+#!arguments=SCRIPTURL=https://raw.githubusercontent.com/lafant/SurgeModule/main/bilibili-daily-fast-cdn.js&SAMPLEBYTES=524288&HTTPTIMEOUT=4&MAXCANDIDATES=4&POLICY=__PROFILE_RULES__&NOTIFY=false
 #!arguments-desc=SCRIPTURL: 将同目录 JS 上传后的 HTTPS 地址\nSAMPLEBYTES: 每个候选下载的 Range 字节数（65536-2097152）\nHTTPTIMEOUT: 每个候选的超时秒数（1-10）\nMAXCANDIDATES: 并发候选数（2-6）\nPOLICY: 测速使用的已有 Surge 策略；保留默认值则遵循现有规则\nNOTIFY: true 时显示每日测速结果
 
 [General]
