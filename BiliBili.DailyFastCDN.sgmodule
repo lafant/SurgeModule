@@ -1,0 +1,13 @@
+#!name=📺 BiliBili: 每日最快 CDN
+#!desc=兼容版：当天首次 JSON PlayURL 时测速并优先最快播放源；不依赖参数面板。
+#!category=📺 BiliBili
+
+[General]
+force-http-engine-hosts = %INSERT% api.bilibili.com:443, api.biliapi.net:443, app.bilibili.com:443
+
+[Script]
+BiliBili.DailyFastCDN.PlayURL = type=http-response,pattern=^https?:\/\/(?:api\.bili(?:bili\.com|api\.net)|app\.bilibili\.com)\/(?:x\/player\/(?:wbi\/)?playurl|pgc\/player\/(?:api|web)(?:\/v2)?\/playurl)(?:\?|$),requires-body=true,max-size=524288,timeout=15,script-path=https://raw.githubusercontent.com/lafant/SurgeModule/main/bilibili-daily-fast-cdn.js,script-update-interval=86400,argument=mode=playurl&sample_bytes=524288&http_timeout=4&max_candidates=4&policy=__PROFILE_RULES__&notify=false
+
+[MITM]
+hostname = %INSERT% api.bilibili.com, api.biliapi.net, app.bilibili.com
+tcp-connection = true
